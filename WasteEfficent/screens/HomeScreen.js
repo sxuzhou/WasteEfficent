@@ -9,9 +9,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { Container, Header, Content, Button, Text2 } from 'native-base';
 
 import { MonoText } from '../components/StyledText';
-import Button from 'react-bootstrap/Button';
 
 export default function HomeScreen() {
   return (
@@ -41,9 +41,8 @@ export default function HomeScreen() {
           </View>
 
           <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.s
+            Change this text and your app will automatically reload.
           </Text>
-          <Button><Text>Hello</Text></Button>
         </View>
         
 
@@ -60,6 +59,9 @@ export default function HomeScreen() {
         <Text style={styles.tabBarInfoText}>
           This is a tab bar. You can edit it in:
         </Text>
+        <Button href='button1' onClick={handleClick}>
+            <Text>Click Me!</Text>
+          </Button>
 
         <View
           style={[styles.codeHighlightContainer, styles.navigationFilename]}>
@@ -75,6 +77,12 @@ export default function HomeScreen() {
 HomeScreen.navigationOptions = {
   header: null,
 };
+
+
+function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  };
 
 function DevelopmentModeNotice() {
   if (__DEV__) {
