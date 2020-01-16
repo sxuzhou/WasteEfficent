@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
-export default function LinksScreen() {
+export default function AccountScreen() {
   return (
     <ScrollView style={styles.container}>
       {/**
@@ -13,9 +13,8 @@ export default function LinksScreen() {
     </ScrollView>
   );
 }
-
-LinksScreen.navigationOptions = {
-  title: 'Links',
+AccountScreen.navigationOptions = {
+  title: 'Account',
 };
 
 const styles = StyleSheet.create({
