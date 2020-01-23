@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { ExpoConfigView } from '@expo/samples';
 import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity} from 'react-native';
 import { Button, StyleProvider } from 'native-base';
 import { FlexLeft } from '../components/FlexBox';
-import { StopsText } from '../components/StopsText';
+import  { StopsText } from '../components/StopsText';
 import { InputBoxes } from '../components/InputBoxes';
 import { Input } from 'native-base';
-
 
 export default function StopsScreen() {
   return (
@@ -40,16 +40,12 @@ StopsScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
+    paddingTop: 10,
     backgroundColor: '#fff',
-    
   },
-  Button:
-  {
+  Button: {
     flex: 1,
-    marginTop: 500,
     paddingTop: 15,
     backgroundColor: '#000',
-    
   },
 });

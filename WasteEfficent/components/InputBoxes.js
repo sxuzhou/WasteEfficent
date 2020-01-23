@@ -6,7 +6,7 @@ export function InputBoxes(props) {
     const [value, onChangeText] = React.useState('');
   return (
 <TextInput {...props}
-    style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+    style={{ width: 80, height: 40, borderColor: 'gray', borderWidth: 1, }}
     onChangeText={text => onChangeText(text)}
     value={value} />
   );
