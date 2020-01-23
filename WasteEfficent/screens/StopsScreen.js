@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity} from 'react-native';
-import { Button, StyleProvider } from 'native-base';
-import { FlexLeft } from '../components/FlexBox';
-import { StopsText } from '../components/StopsText';
+import { Button, StyleProvider, Container } from 'native-base';
 import { InputBoxes } from '../components/InputBoxes';
-import { Input } from 'native-base';
-
 
 export default function StopsScreen() {
   return (
     <ScrollView style={styles.container}>
       {
-        <FlexLeft> 
+        <Container>
           <InputBoxes></InputBoxes>
           <Button
           onPress={() => alert("Added stop!")}>
@@ -27,7 +23,7 @@ export default function StopsScreen() {
           onPress={() => alert("Remove stop!")}>
           <Text>Remove Stop</Text>
           </Button> 
-        </FlexLeft>
+        </Container>
       }
     </ScrollView>
   );
