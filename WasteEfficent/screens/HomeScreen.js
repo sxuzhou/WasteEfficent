@@ -33,35 +33,33 @@ export default function HomeScreen() {
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Get started by opening</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
+          <Text style={styles.getStartedText}>Welcome to WasteEfficient!</Text>
           <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
+            Providing you with easy to use software that your employees will love.
           </Text>
         </View>
         
-
         <View style={styles.helpContainer}>
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
+              Click here to create an account.
             </Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
+
+      <View style={styles.helpContainer}>
+          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
+            <Text style={styles.helpLinkText}>
+              Already have an account? Click here to sign in.
+            </Text>
+          </TouchableOpacity>
+        </View>
+        </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
           This is a tab bar. You can edit it in:
         </Text>
-        <Button href='button1' onClick={handleClick}>
-            <Text>Click Me!</Text>
-          </Button>
 
         <View
           style={[styles.codeHighlightContainer, styles.navigationFilename]}>
@@ -77,7 +75,6 @@ export default function HomeScreen() {
 HomeScreen.navigationOptions = {
   header: null,
 };
-
 
 function handleClick(e) {
     e.preventDefault();

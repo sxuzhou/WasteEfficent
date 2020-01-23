@@ -4,8 +4,11 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import StopsScreen from '../screens/StopsScreen';
+import RoutesScreen from '../screens/RoutesScreen';
+import DrivesScreen from '../screens/DrivesScreen';
+import AccountScreen from '../screens/AccountScreen';
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -35,42 +38,75 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const StopsStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Links: StopsScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+StopsStack.navigationOptions = {
+  tabBarLabel: 'Stops',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
   ),
 };
 
-LinksStack.path = '';
+StopsStack.path = '';
 
-const SettingsStack = createStackNavigator(
+const RoutesStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    Routes: RoutesScreen,
   },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+RoutesStack.navigationOptions = {
+  tabBarLabel: 'Routes',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   ),
 };
 
-SettingsStack.path = '';
+RoutesStack.path = '';
+
+const DrivesStack = createStackNavigator(
+  {
+    Drives: DrivesScreen, 
+  },
+  config
+);
+
+DrivesStack.navigationOptions = {
+  tabBarLabel: 'Drives',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+  ),
+};
+
+DrivesStack.path = '';
+
+const AccountStack = createStackNavigator(
+  {
+    Routes: RoutesScreen, 
+  },
+  config
+);
+
+AccountStack.navigationOptions = { 
+  tabBarLabel: 'Account',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+  ),
+};
+
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  StopsStack,
+  RoutesStack,
+  DrivesStack,
+  AccountStack,
 });
 
 tabNavigator.path = '';
