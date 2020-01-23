@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity} from 'react-native';
+<<<<<<< Updated upstream
 import { Button, StyleProvider } from 'native-base';
 import { FlexLeft } from '../components/FlexBox';
 import  { StopsText } from '../components/StopsText';
+=======
+import { Button, StyleProvider,Container } from 'native-base';
+>>>>>>> Stashed changes
 import { InputBoxes } from '../components/InputBoxes';
-import { Input } from 'native-base';
 
 export default function StopsScreen() {
   return (
     <ScrollView style={styles.container}>
       {
-        <FlexLeft> 
+        <Container>
           <InputBoxes></InputBoxes>
           <Button
           onPress={() => alert("Added stop!")}>
@@ -27,7 +30,7 @@ export default function StopsScreen() {
           onPress={() => alert("Remove stop!")}>
           <Text>Remove Stop</Text>
           </Button> 
-        </FlexLeft>
+          </Container>
       }
     </ScrollView>
   );
@@ -42,10 +45,15 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 10,
     backgroundColor: '#fff',
+<<<<<<< Updated upstream
+=======
+    maxWidth: '50%',
+>>>>>>> Stashed changes
   },
   Button: {
     flex: 1,
     paddingTop: 15,
+    maxWidth: '80%',
     backgroundColor: '#000',
   },
 });
