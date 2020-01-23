@@ -40,16 +40,11 @@ StopsScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     paddingTop: 15,
     backgroundColor: '#fff',
-    
   },
-  Button:
-  {
-    flex: 1,
-    marginTop: 500,
-    paddingTop: 15,
-    backgroundColor: '#000',
-    
-  },
+  inputBoxes: {
+    maxWidth: '80%',
+  }
 });
