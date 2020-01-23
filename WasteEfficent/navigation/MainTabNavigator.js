@@ -4,11 +4,8 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import StopsScreen from '../screens/StopsScreen';
-import RoutesScreen from '../screens/RoutesScreen';
-import DrivesScreen from '../screens/DrivesScreen';
-import AccountScreen from '../screens/AccountScreen';
-
+import LinksScreen from '../screens/LinksScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -38,75 +35,42 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const StopsStack = createStackNavigator(
+const LinksStack = createStackNavigator(
   {
-    Links: StopsScreen,
+    Links: LinksScreen,
   },
   config
 );
 
-StopsStack.navigationOptions = {
-  tabBarLabel: 'Stops',
+LinksStack.navigationOptions = {
+  tabBarLabel: 'Links',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
   ),
 };
 
-StopsStack.path = '';
+LinksStack.path = '';
 
-const RoutesStack = createStackNavigator(
+const SettingsStack = createStackNavigator(
   {
-    Routes: RoutesScreen,
+    Settings: SettingsScreen,
   },
   config
 );
 
-RoutesStack.navigationOptions = {
-  tabBarLabel: 'Routes',
+SettingsStack.navigationOptions = {
+  tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   ),
 };
 
-RoutesStack.path = '';
-
-const DrivesStack = createStackNavigator(
-  {
-    Drives: DrivesScreen, 
-  },
-  config
-);
-
-DrivesStack.navigationOptions = {
-  tabBarLabel: 'Drives',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
-};
-
-DrivesStack.path = '';
-
-const AccountStack = createStackNavigator(
-  {
-    Routes: RoutesScreen, 
-  },
-  config
-);
-
-AccountStack.navigationOptions = { 
-  tabBarLabel: 'Account',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
-};
-
+SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  StopsStack,
-  RoutesStack,
-  DrivesStack,
-  AccountStack,
+  LinksStack,
+  SettingsStack,
 });
 
 tabNavigator.path = '';

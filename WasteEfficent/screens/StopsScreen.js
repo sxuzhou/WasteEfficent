@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity} from 'react-native';
-import { Button, StyleProvider } from 'native-base';
+import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity } from 'react-native';
 import { FlexLeft } from '../components/FlexBox';
 import { StopsText } from '../components/StopsText';
 import { InputBoxes } from '../components/InputBoxes';
-import { Input } from 'native-base';
+import { Input, Container } from 'native-base';
 
 
 export default function StopsScreen() {
   return (
     <ScrollView style={styles.container}>
       {
-        <FlexLeft> 
+        <Container style={styles.inputBoxes}>
+          <StopsText>Add Stop:</StopsText>
+          <Text>Enter your stop name to add:</Text>
           <InputBoxes></InputBoxes>
-          <Button
-          onPress={() => alert("Added stop!")}>
-          <Text>Add stop</Text>
-          </Button>
+          <StopsText>Edit Stop:</StopsText>
+          <Text>Input your stop name to edit:</Text>
           <InputBoxes></InputBoxes>
-          <Button
-          onPress={() => alert("Edit stop!")}>
-          <Text>Edit Stop</Text>
-          </Button>
+          <StopsText>Remove Stop:</StopsText>
+          <Text>Enter your stop name to remove:</Text>
           <InputBoxes></InputBoxes>
-          <Button
-          onPress={() => alert("Remove stop!")}>
-          <Text>Remove Stop</Text>
-          </Button> 
-        </FlexLeft>
+        </Container>
       }
     </ScrollView>
   );
