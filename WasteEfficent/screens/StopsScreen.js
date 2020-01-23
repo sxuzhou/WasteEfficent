@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity} from 'react-native';
+import { Button, StyleProvider } from 'native-base';
 import { FlexLeft } from '../components/FlexBox';
 import { StopsText } from '../components/StopsText';
 import { InputBoxes } from '../components/InputBoxes';
@@ -10,16 +11,22 @@ export default function StopsScreen() {
   return (
     <ScrollView style={styles.container}>
       {
-        <FlexLeft>
-          <StopsText>Add Stop:</StopsText>
-          <Text>Enter your stop name to add:</Text>
+        <FlexLeft> 
           <InputBoxes></InputBoxes>
-          <StopsText>Edit Stop:</StopsText>
-          <Text>Input your stop name to edit:</Text>
+          <Button
+          onPress={() => alert("Added stop!")}>
+          <Text>Add stop</Text>
+          </Button>
           <InputBoxes></InputBoxes>
-          <StopsText>Remove Stop:</StopsText>
-          <Text>Enter your stop name to remove:</Text>
+          <Button
+          onPress={() => alert("Edit stop!")}>
+          <Text>Edit Stop</Text>
+          </Button>
           <InputBoxes></InputBoxes>
+          <Button
+          onPress={() => alert("Remove stop!")}>
+          <Text>Remove Stop</Text>
+          </Button> 
         </FlexLeft>
       }
     </ScrollView>
@@ -35,5 +42,14 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
+    
+  },
+  Button:
+  {
+    flex: 1,
+    marginTop: 500,
+    paddingTop: 15,
+    backgroundColor: '#000',
+    
   },
 });
