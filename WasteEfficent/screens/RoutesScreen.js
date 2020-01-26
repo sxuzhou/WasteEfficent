@@ -1,11 +1,12 @@
-import React from 'react';
-import { Container, Header, Content, ListItem, Text, Radio, Right, Left, View } from 'native-base';
+import React, { Component } from 'react';
+import { Container, List , Text, View } from 'native-base';
+import RoutesList from '../components/RoutesList';
 
-export default function RoutesScreen() {
-  /**
-   * Go ahead and delete ExpoConfigView and replace it with your content;
-   * we just wanted to give you a quick view of your config.
-   */
+var Routes = [{ id: 1, name: "route1" , mapsData: {}}, { id: 2,name: "route2" , mapsData: {}}]
+
+export default class RoutesScreen extends Component {
+  state = { routes: Routes}
+  render(){
   return (
     <Container>
     <View style={{
@@ -14,41 +15,25 @@ export default function RoutesScreen() {
           backgroundColor: "#92ad1",
         }}>
  
-      <Text style={{
-          alignSelf: "center"
+      <Text
+       style={{
+          alignSelf: "center",
+          paddingTop: 10
         }}>
           Select your route</Text>
     </View>
-    <Content>
-      <ListItem selected={false} >
-        <Left>
-          <Text>Route Number 1</Text>
-        </Left>
-        <Right>
-          <Radio
-            color={"#f0ad4e"}
-            selectedColor={"#5cb85c"}
-            selected={false}
-          />
-        </Right>
-      </ListItem>
-      <ListItem selected={true}>
-        <Left>
-          <Text>Route number 2</Text>
-        </Left>
-        <Right>
-          <Radio
-            color={"#f0ad4e"}
-            selectedColor={"#5cb85c"}
-            selected={true}
-          />
-        </Right>
-      </ListItem>
-    </Content>
+    <List>
+      {this.state.routes.map( (route, index) => {
+        return(
+          <RoutesList routeName={route.name} selectedBoolean={false} ></RoutesList>
+        )
+      })}
+    </List>
   </Container>
   );
+      }
 }
 
 RoutesScreen.navigationOptions = {
-  title: 'app.json',
+  title: 'Routes',
 };
