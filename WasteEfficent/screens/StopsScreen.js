@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ExpoConfigView } from '@expo/samples';
 import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity} from 'react-native';
-import { Button, StyleProvider,Container } from 'native-base';
+import { Button, StyleProvider, Container } from 'native-base';
 import { InputBoxes } from '../components/InputBoxes';
 
 export default function StopsScreen() {
@@ -24,7 +24,7 @@ export default function StopsScreen() {
           onPress={() => alert("Remove stop!")}>
           <Text>Remove Stop</Text>
           </Button> 
-          </Container>
+        </Container>
       }
     </ScrollView>
   );
@@ -47,4 +47,7 @@ const styles = StyleSheet.create({
     maxWidth: '80%',
     backgroundColor: '#000',
   },
+  inputBoxes: {
+    maxWidth: '80%',
+  }
 });

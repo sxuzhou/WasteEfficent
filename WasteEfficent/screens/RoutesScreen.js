@@ -1,38 +1,52 @@
-import React, { Component } from 'react';
-import { ExpoConfigView } from '@expo/samples';
-import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity} from 'react-native';
-import { Button, StyleProvider, Left } from 'native-base';
-import { FlexLeft } from '../components/FlexBox';
-import  { StopsText } from '../components/StopsText';
-import { InputBoxes } from '../components/InputBoxes';
-import { Input } from 'native-base';
+import React from 'react';
+import { Container, Header, Content, ListItem, Text, Radio, Right, Left, View } from 'native-base';
+
 export default function RoutesScreen() {
-
+  /**
+   * Go ahead and delete ExpoConfigView and replace it with your content;
+   * we just wanted to give you a quick view of your config.
+   */
   return (
-    <ScrollView style={styles.container}>
-      {
-        <FlexLeft> 
-          <InputBoxes></InputBoxes>
-          <Button
-          onPress={() => alert("Added stop!")}>
-          <Text>Create Route</Text>
-          </Button>
-          <InputBoxes></InputBoxes>
-          <Button
-          onPress={() => alert("Edit stop!")}>
-          <Text>Edit Route</Text>
-          </Button>
-          <InputBoxes></InputBoxes>
-          <Button
-          onPress={() => alert("Remove stop!")}>
-          <Text>Remove Route</Text>
-          </Button> 
-        </FlexLeft>
-      }
-    </ScrollView>
+    <Container>
+    <View style={{
+          alignSelf: "center",
+          width: "100%",
+          backgroundColor: "#92ad1",
+        }}>
+ 
+      <Text style={{
+          alignSelf: "center"
+        }}>
+          Select your route</Text>
+    </View>
+    <Content>
+      <ListItem selected={false} >
+        <Left>
+          <Text>Route Number 1</Text>
+        </Left>
+        <Right>
+          <Radio
+            color={"#f0ad4e"}
+            selectedColor={"#5cb85c"}
+            selected={false}
+          />
+        </Right>
+      </ListItem>
+      <ListItem selected={true}>
+        <Left>
+          <Text>Route number 2</Text>
+        </Left>
+        <Right>
+          <Radio
+            color={"#f0ad4e"}
+            selectedColor={"#5cb85c"}
+            selected={true}
+          />
+        </Right>
+      </ListItem>
+    </Content>
+  </Container>
   );
-
-  return <ExpoConfigView />;
 }
 
 RoutesScreen.navigationOptions = {
