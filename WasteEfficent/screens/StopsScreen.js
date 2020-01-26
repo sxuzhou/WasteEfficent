@@ -16,7 +16,7 @@ export default function StopsScreen() {
           </Button>
           <InputBoxes></InputBoxes>
           <Button
-          onPress={() => alert("Edit stop!")}>
+          onPress={() => alert("Edited stop!")}>
           <Text>Edit Stop</Text>
           </Button>
           <InputBoxes></InputBoxes>

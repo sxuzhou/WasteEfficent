@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { TextInput,Text, View } from 'react-native';
 
 export function InputBoxes(props) {

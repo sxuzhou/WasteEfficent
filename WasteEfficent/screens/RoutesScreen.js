@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Header, Content, ListItem, Text, Radio, Right, Left, View } from 'native-base';
-
+import {StyleSheet} from 'react-native';
 export default function RoutesScreen() {
   /**
    * Go ahead and delete ExpoConfigView and replace it with your content;
