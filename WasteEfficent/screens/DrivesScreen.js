@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import ReactGoogleMapLoader from "react-google-maps-loader"
 import ReactGooglePlacesSuggest from "react-google-places-suggest"
  
-const MY_API_KEY = "AIzaSyCoEAenFakzq3Km2PSkx838ifmfK9mvpWg" // fake
+const MY_API_KEY = "placeholder" // fake
  
 export default class GoogleSuggest extends React.Component {
     state = {
