@@ -23,7 +23,7 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/robot-dev.png')
+                ? require('../assets/images/western-eng.png')
                 : require('../assets/images/robot-prod.png')
             }
             style={styles.welcomeImage}
@@ -33,9 +33,10 @@ export default function HomeScreen() {
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Welcome to WasteEfficient!</Text>
+          <Text style={styles.getStartedText}>Welcome to GarbRoute!</Text>
           <Text style={styles.getStartedText}>
-            Providing you with easy to use software that your employees will love.
+            Aiming to provide GPS and data collection solutions
+             with easy to use software that your employees will love.
           </Text>
         </View>
         
@@ -58,13 +59,13 @@ export default function HomeScreen() {
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
+          WORK IN PROGRESS.
         </Text>
 
         <View
           style={[styles.codeHighlightContainer, styles.navigationFilename]}>
           <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
+          FOR ECE4415 DEMO PURPOSES
           </MonoText>
         </View>
       </View>
