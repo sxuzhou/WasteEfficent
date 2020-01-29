@@ -5,7 +5,9 @@ import {ListItem, Left, Right, Radio} from 'native-base';
 export default class RoutesList extends Component {
     render(){
       return (
-        <ListItem selected={this.props.selectedBoolean} keyExtractor={(item) => item.key} >
+        <ListItem
+        selected={this.props.selectedBoolean}
+        >
         <Left>
           <Text>{this.props.routeName}</Text>
         </Left>

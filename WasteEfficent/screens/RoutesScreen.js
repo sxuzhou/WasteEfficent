@@ -21,11 +21,16 @@ export default class RoutesScreen extends Component {
           paddingTop: 10
         }}>
           Select your route</Text>
+          
     </View>
     <List>
       {this.state.routes.map( (route, index) => {
         return(
-          <RoutesList routeName={route.name} selectedBoolean={false} ></RoutesList>
+          <RoutesList 
+          routeName={route.name} 
+          selectedBoolean={false}
+          key = {index + route.id}
+          ></RoutesList>
         )
       })}
     </List>
