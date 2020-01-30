@@ -68,13 +68,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 10,
     backgroundColor: '#fff',
-    maxWidth: '50%',
-  },
-  Button: {
-    flex: 1,
-    paddingTop: 15,
-    maxWidth: '80%',
-    backgroundColor: '#000',
   },
   inputBoxes: {
     maxWidth: '80%',

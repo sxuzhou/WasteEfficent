@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator } from 'react-native'
+import { ActivityIndicator, StyleSheet } from 'react-native'
 import { Container, Content, Card, Body, List, Text, Button, CardItem } from 'native-base';
 import RoutesList from '../components/RoutesList';
 import * as Font from 'expo-font'
