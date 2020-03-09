@@ -8,6 +8,7 @@ import StopsScreen from '../screens/StopsScreen';
 import RoutesScreen from '../screens/RoutesScreen';
 import DrivesScreen from '../screens/DrivesScreen';
 import AccountScreen from '../screens/AccountScreen';
+import AddStopsScreen from '../screens/AddStopsScreen';
 
 
 const config = Platform.select({
@@ -40,7 +41,8 @@ HomeStack.path = '';
 
 const StopsStack = createStackNavigator(
   {
-    Links: StopsScreen,
+    Stops: StopsScreen,
+    AddStops: AddStopsScreen,
   },
   config
 );
@@ -88,7 +90,7 @@ DrivesStack.path = '';
 
 const AccountStack = createStackNavigator(
   {
-    Routes: RoutesScreen, 
+    Accounts: AccountScreen, 
   },
   config
 );

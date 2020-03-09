@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity } from 'react-native';
-import { List,Card, CardItem, Icon, Right, Container, Content } from 'native-base';
+import { List,Card, CardItem, Icon, Right, Container, Content, Button } from 'native-base';
 import RoutesList from '../components/RoutesList';
 
 var Routes = [{ id: 1, name: "Stop1", mapsData: {} }, { id: 2, name: "Stop2", mapsData: {} }, { id: 3, name: "Stop3", mapsData: {} }]
@@ -26,9 +26,12 @@ export default class StopsScreen extends Component {
             )
           })}
         </List>
-          </Content><Content>
+          </Content>
+          <Button onPress={() => this.props.navigation.navigate('AddStops')}>
+            <Text>Hello</Text>
+            </Button><Content>
             <Card>
-              <CardItem>
+              <CardItem onPress={() => this.props.navigation.navigate('AddStops')}>
                 <Icon active type="FontAwesome" name="plus" />
                 <Text>Add stop</Text>
                 <Right>
