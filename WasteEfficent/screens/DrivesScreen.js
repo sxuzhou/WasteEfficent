@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { TextInput,Text, View } from 'react-native';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions
+} from 'react-native';
+
 import MapView from 'react-native-maps';
 import Polyline from '@mapbox/polyline';
 
@@ -14,11 +21,11 @@ export default class RnDirectionsApp extends Component {
   componentDidMount() {
     // find your origin and destination point coordinates and pass it to our method.
     // I am using Toronto, ON -> London, ON in this example below.
-    this.getDirections("43.0258, -81.2784", "43.0258, -81.2784")
+    this.getDirections("43.0258, -81.2784", "43.0126, -81.2656")
   }
   async getDirections(startLoc, destinationLoc) {
         try {
-            let resp = await fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${ startLoc }&destination=${ destinationLoc }&keyhere`)
+            let resp = await fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${ startLoc }&destination=${ destinationLoc }&keyherefixesissues`)
             let respJson = await resp.json();
             let points = Polyline.decode(respJson.routes[0].overview_polyline.points);
             let coords = points.map((point, index) => {
@@ -52,7 +59,19 @@ export default class RnDirectionsApp extends Component {
         </MapView>
       </View>
     );
+  }
 }
-DrivesScreen.navigationOptions = {
-  title: 'Map',
-};
+
+const styles = StyleSheet.create({
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height
+  },
+});
+
+AppRegistry.registerComponent('RnDirectionsApp', () => RnDirectionsApp);
