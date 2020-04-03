@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator } from 'react-native'
+import { ActivityIndicator, StyleSheet } from 'react-native'
 import { Container, Content, Card, Body, List, Text, Button, CardItem, Right, Left } from 'native-base';
 import RoutesList from '../components/RoutesList';
 import * as Font from 'expo-font'
@@ -76,3 +76,17 @@ export default class RoutesScreen extends Component {
 RoutesScreen.navigationOptions = {
   title: 'Routes',
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    paddingTop: 10,
+    backgroundColor: '#fff',
+  },
+  Button: {
+    flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#000',
+  },
+});

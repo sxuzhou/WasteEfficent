@@ -1,13 +1,14 @@
-
-import React from 'react';
-import { TextInput } from 'react-native';
+import React, { Component } from 'react';
+import { TextInput,Text, View } from 'react-native';
 
 export function InputBoxes(props) {
-    const [value, onChangeText] = React.useState('');
   return (
-<TextInput {...props}
-    style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-    onChangeText={text => onChangeText(text)}
-    value={value} />
+    <TextInput 
+    {...props}
+    placeholder="Type street name here!"
+    ref={input => {this.textInput = input}}
+    style={{ height: 40, borderColor: 'gray', borderWidth: 1}}
+
+    />
   );
 }

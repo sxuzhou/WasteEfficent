@@ -66,8 +66,7 @@ StopsScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    paddingTop: 15,
+    paddingTop: 10,
     backgroundColor: '#fff',
   },
   inputBoxes: {
