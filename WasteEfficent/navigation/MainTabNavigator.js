@@ -50,7 +50,7 @@ const StopsStack = createStackNavigator(
 StopsStack.navigationOptions = {
   tabBarLabel: 'Stops',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-pin'} />
   ),
 };
 
@@ -66,7 +66,7 @@ const RoutesStack = createStackNavigator(
 RoutesStack.navigationOptions = {
   tabBarLabel: 'Routes',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-subway'} />
   ),
 };
 
@@ -80,9 +80,9 @@ const DrivesStack = createStackNavigator(
 );
 
 DrivesStack.navigationOptions = {
-  tabBarLabel: 'Drives',
+  tabBarLabel: 'Drive',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-navigate'} />
   ),
 };
 

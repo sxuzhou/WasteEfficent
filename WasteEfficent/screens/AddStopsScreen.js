@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Field } from 'react-final-form'
-import { Container, Content, Item, Input, Button, Text } from 'native-base';
-
+import { Container, Content, Item, Input, Button, Text, Form,} from 'native-base';
 
 export default class AddStopsScreen extends Component {
     state = {
@@ -9,28 +7,30 @@ export default class AddStopsScreen extends Component {
         address: '',
         postalCode: '',
     }
-    handleChange = this.handleChange.bind(this);
 
-    handleChange(evnt){
-        this.setState({ [evnt.target.name] : evnt.target.value});
-    }
     render() {
         return (
             <Container>
                 <Content>
-                    <Form onSubmit={() => console.log(this.state)} redner={
-                        <form onSubmit={handleChange}>
-                            <Field onChange={this.handleChange} name="name" component="input" placeholder='Enter Stop Name Here'/>
+                    <Form>
+                            <Item>
+                                <Input placeholder='Enter Stop Name Here'/>
+                            </Item>
 
-                        <Field onChange={this.handleChange} name="address" component="input" placeholder='Enter Stop Address Here'/>
+                            <Item>
+                                <Input placeholder='Enter Stop Address Here'/>
+                            </Item>
 
-                        <Field onChange={this.handleChange} name="postalCode" component="input" placeholder='Enter Stop Postal Code Here'/>
+                            <Item>
+                                <Input placeholder='Enter Stop Postal Code Here'/>
+                            </Item>
+                    <Content>
                         <Button type="submit">
                             <Text>Submit</Text>
-                        </Button></form>
-                    }
+                        </Button>
+                    </Content>
                         
-                       />
+                        </Form>
 
 
                 </Content>
