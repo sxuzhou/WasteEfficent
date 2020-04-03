@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View, FlatList, Alert, TouchableOpacity } from 'react-native';
-import { List,Card, CardItem, Icon, Right, Container, Content } from 'native-base';
+import { List,Card, CardItem, Icon, Right, Container, Content, Button, Body } from 'native-base';
 import RoutesList from '../components/RoutesList';
 
-var Routes = [{ id: 1, name: "Stop1", mapsData: {} }, { id: 2, name: "Stop2", mapsData: {} }, { id: 3, name: "Stop3", mapsData: {} }]
+var Routes = [{ id: 1, name: "Western University Garbage Site", mapsData: {} }, { id: 2, name: "Brescia Ln Site", mapsData: {} }, { id: 3, name: "Perth Hall Site", mapsData: {} },{ id: 4, name: "Ontario Hall Site", mapsData: {} },{ id: 5, name: "Essex Hall Site", mapsData: {} }]
 export default class StopsScreen extends Component {
   state = {
     routes: Routes,
@@ -13,7 +13,6 @@ export default class StopsScreen extends Component {
     <ScrollView style={styles.container}>
       {
         <Container>
-          
           <Content>
           <List>
           {this.state.routes.map((route, index) => {
@@ -26,13 +25,14 @@ export default class StopsScreen extends Component {
             )
           })}
         </List>
-          </Content><Content>
+        
+          </Content><Card><CardItem><Body><Text>Stops are singular sites you can chain together to make a route</Text></Body></CardItem></Card><Content>
             <Card>
               <CardItem>
                 <Icon active type="FontAwesome" name="plus" />
                 <Text>Add stop</Text>
                 <Right>
-                  <Icon name="arrow-forward" />
+                <Button transparent onPress={() => this.props.navigation.navigate('AddStops')}><Icon name="arrow-forward" /></Button>
                 </Right>
               </CardItem>
 
