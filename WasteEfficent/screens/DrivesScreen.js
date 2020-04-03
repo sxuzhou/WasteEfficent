@@ -27,7 +27,7 @@ export default class RnDirectionsApp extends Component {
   }
   async getDirections(startLoc, destinationLoc) {
     try {
-      let resp = await fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}&key=AIzaSyAxVOLyJLJi2xHuokJK489s_sQWM1R3DYk`)
+      let resp = await fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${startLoc}&destination=${destinationLoc}&key=keyhere`)
       let respJson = await resp.json();
       let points = Polyline.decode(respJson.routes[0].overview_polyline.points);
       let coords = points.map((point, index) => {
