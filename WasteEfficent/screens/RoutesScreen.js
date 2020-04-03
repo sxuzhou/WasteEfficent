@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { ActivityIndicator } from 'react-native'
-import { Container, Content, Card, Body, List, Text, Button, CardItem } from 'native-base';
+import { Container, Content, Card, Body, List, Text, Button, CardItem, Right, Left } from 'native-base';
 import RoutesList from '../components/RoutesList';
 import * as Font from 'expo-font'
 
-var Routes = [{ id: 1, name: "route1", mapsData: {} }, { id: 2, name: "route2", mapsData: {} }, { id: 3, name: "route3", mapsData: {} }]
+var Routes = [{ id: 1, name: "Western University Route", mapsData: {} }, { id: 2, name: "Broughdale Neighbourhood Route", mapsData: {} }, { id: 3, name: "Oakridge Neighbourhood Route", mapsData: {} }]
 
 export default class RoutesScreen extends Component {
   state = {
@@ -41,9 +41,18 @@ export default class RoutesScreen extends Component {
 
 
           </Card>
-          <Button rounded style={{ width: '35%' }}>
+          <Card>
+            <CardItem>
+          <Right>
+            <Button rounded style={{ width: '100%', margin: 'auto' }}>
             <Text>Add Routes</Text>
+          </Button></Right>
+          <Left><Button rounded danger style={{ width: '100%', margin: 'auto' }}>
+            <Text>Delete Routes</Text>
           </Button>
+          </Left>
+          </CardItem>
+          </Card>
         </Content>
         <List>
           {this.state.routes.map((route, index) => {

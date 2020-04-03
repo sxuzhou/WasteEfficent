@@ -8,6 +8,7 @@ import StopsScreen from '../screens/StopsScreen';
 import RoutesScreen from '../screens/RoutesScreen';
 import DrivesScreen from '../screens/DrivesScreen';
 import AccountScreen from '../screens/AccountScreen';
+import AddStopsScreen from '../screens/AddStopsScreen';
 
 
 const config = Platform.select({
@@ -40,7 +41,8 @@ HomeStack.path = '';
 
 const StopsStack = createStackNavigator(
   {
-    Links: StopsScreen,
+    Stops: StopsScreen,
+    AddStops: AddStopsScreen,
   },
   config
 );
@@ -48,7 +50,7 @@ const StopsStack = createStackNavigator(
 StopsStack.navigationOptions = {
   tabBarLabel: 'Stops',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-pin'} />
   ),
 };
 
@@ -64,7 +66,7 @@ const RoutesStack = createStackNavigator(
 RoutesStack.navigationOptions = {
   tabBarLabel: 'Routes',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-subway'} />
   ),
 };
 
@@ -78,9 +80,9 @@ const DrivesStack = createStackNavigator(
 );
 
 DrivesStack.navigationOptions = {
-  tabBarLabel: 'Drives',
+  tabBarLabel: 'Drive',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-navigate'} />
   ),
 };
 
@@ -88,7 +90,7 @@ DrivesStack.path = '';
 
 const AccountStack = createStackNavigator(
   {
-    Routes: RoutesScreen, 
+    Accounts: AccountScreen, 
   },
   config
 );
